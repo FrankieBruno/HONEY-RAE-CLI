@@ -37,16 +37,16 @@ export const TicketCard = ({ ticket }) => {
     }
   }
 
-  useEffect(() => {
-    // if (assignedTo !== null) {
-      const updatedTicket = {
-        ...ticket,
-        employee: assignedTo
-      }
-      console.log(updatedTicket)
-      updateTicket(updatedTicket).then((data) => console.log(data))
-    // }
-  }, [assignedTo])
+  // useEffect(() => {
+  //   // if (assignedTo !== null) {
+  //     const updatedTicket = {
+  //       ...ticket,
+  //       employee: assignedTo
+  //     }
+  //     console.log(updatedTicket)
+  //     updateTicket(updatedTicket).then((data) => console.log(data))
+  //   // }
+  // }, [assignedTo])
 
   return (
     <div className="ticketCardContainer">
