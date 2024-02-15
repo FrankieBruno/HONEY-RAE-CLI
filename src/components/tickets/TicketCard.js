@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import { GoPersonAdd } from "react-icons/go";
 // import { HiDocumentMinus } from "react-icons/hi2";
 import { getAllEmployees } from "../../managers/EmployeeManager"
-import { updateTicket } from "../../managers/TicketManager"
+// import { updateTicket } from "../../managers/TicketManager"
 import "./Tickets.css"
 
 // export const TicketCard = ({ ticket }) => {
