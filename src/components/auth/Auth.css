@@ -1,0 +1,58 @@
+main {
+    padding: 5em 0 0 10em;
+}
+
+h1 {
+    font-weight: 400;
+    margin-bottom: 4em;
+}
+
+h2 {
+    font-weight: 600;
+
+}
+
+.illustration {
+    position: absolute;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    height: 85%;
+}
+
+.form--login {
+    width: 25%;
+}
+
+.form-control {
+    display: block;
+    font-family: "IBM Plex Mono";
+    background: #00431B;
+    color: white;
+    padding: 1em;
+    border: 0;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-link {
+    color: #F5CD51;
+    text-decoration: none;
+}
+
+.btn {
+	font-family: "IBM Plex Mono";
+    font-weight: 700;
+    border: none;
+    background: #F5CD51;
+    padding: 1em 2em;
+
+}

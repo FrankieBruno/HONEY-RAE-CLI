@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+
+body {
+	background: linear-gradient(132deg, #009A59 0%, #066F43 56%);
+	font-family: 'IBM Plex Mono';
+	color: white;
+	height: 100vh;
+	margin: 0;
+}
