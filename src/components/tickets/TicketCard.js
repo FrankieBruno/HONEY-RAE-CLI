@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import { GoPersonAdd } from "react-icons/go";
 // import { HiDocumentMinus } from "react-icons/hi2";
 import { getAllEmployees } from "../../managers/EmployeeManager"
-// import { updateTicket } from "../../managers/TicketManager"
+import { updateTicket } from "../../managers/TicketManager"
 import "./Tickets.css"
 
 // export const TicketCard = ({ ticket }) => {
@@ -37,16 +37,16 @@ export const TicketCard = ({ ticket }) => {
     }
   }
 
-  // useEffect(() => {
-  //   // if (assignedTo !== null) {
-  //     const updatedTicket = {
-  //       ...ticket,
-  //       employee: assignedTo
-  //     }
-  //     console.log(updatedTicket)
-  //     updateTicket(updatedTicket).then((data) => console.log(data))
-  //   // }
-  // }, [assignedTo])
+  useEffect(() => {
+    // if (assignedTo !== null) {
+      const updatedTicket = {
+        ...ticket,
+        employee: assignedTo
+      }
+      console.log(updatedTicket)
+      updateTicket(updatedTicket).then((data) => console.log(data))
+    // }
+  }, [])
 
   return (
     <div className="ticketCardContainer">
