@@ -16,11 +16,11 @@ export const Ticket = () => {
       .then((res) => setTicket(res))
   }
 
-  useEffect(
-    () => {
-      fetchTicket()
-    }
-    , [])
+  // useEffect(
+  //   () => {
+  //     fetchTicket()
+  //   }
+  //   , [])
 
   useEffect(
     () => {
