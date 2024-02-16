@@ -3,6 +3,12 @@
     flex-direction: column;
 }
 
+h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .ticket {
     background-color: #D9D9D9;
     /* border: 1px dotted darkmagenta; */
@@ -130,6 +136,14 @@
     color: black;
 }
 
+.ticketDescription,
+.ticketDetailContainer>a,
+.left {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .ticketDescription:hover {
     text-decoration: underline;
 }
@@ -214,6 +228,16 @@
 
 .ticketForm {
     border: none;
+}
+
+fieldset,
+.form-group,
+.form-control {
+    border: none;
+    padding: 0;
+    margin: 0;
+    padding: 0.5em 0;
+    margin: 0.5em 0;
 }
 
 fieldset, .form-group, .form-control {

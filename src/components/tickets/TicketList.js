@@ -15,15 +15,17 @@ export const TicketList = () => {
     getAllTickets().then((res) => setTickets(res))
   }, [])
 
-  // useEffect(() => {
-  //   const activeTicketCount = tickets.filter(t => t.date_completed === null).length
-  //   if (isStaff()) {
-  //     setActive(`There are ${activeTicketCount} open tickets`)
-  //   }
-  //   else {
-  //     setActive(`You have ${activeTicketCount} open tickets`)
-  //   }
-  // }, [tickets])
+  useEffect(() => {
+    const activeTicketCount = tickets.filter(t => t.date_completed === null).length
+    if (isStaff()) {
+      setActive(`There are ${activeTicketCount} open tickets`)
+      console.log(active)
+    }
+    else {
+      setActive(`You have ${activeTicketCount} open tickets`)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tickets])
 
   // const toShowOrNotToShowTheButton = () => {
   //   if (isStaff()) {

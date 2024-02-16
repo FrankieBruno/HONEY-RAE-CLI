@@ -46,7 +46,7 @@ export const TicketCard = ({ ticket }) => {
       console.log(updatedTicket)
       updateTicket(updatedTicket).then((data) => console.log(data))
     // }
-  }, [assignedTo, ticket])
+  }, [assignedTo])
 
   return (
     <div className="ticketCardContainer">
