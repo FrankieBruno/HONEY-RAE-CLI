@@ -41,7 +41,6 @@ export const updateEmployee = (id, employee) => {
     },
     body: JSON.stringify(employee)
   })
-    .then(res => res.json())
 }
 
 export const getAllEmployees = () => {
