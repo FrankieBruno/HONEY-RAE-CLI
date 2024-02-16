@@ -20,7 +20,7 @@ export const Ticket = () => {
     () => {
       fetchTicket()
     }
-    , [fetchTicket])
+    , [])
 
   useEffect(
     () => {
