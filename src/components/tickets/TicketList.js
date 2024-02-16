@@ -6,7 +6,7 @@ import { getAllTickets, searchTicketsByStatus } from "../../managers/TicketManag
 import "./Tickets.css"
 
 export const TicketList = () => {
-  // const [active, setActive] = useState("")
+  const [active, setActive] = useState("")
   const [tickets, setTickets] = useState([])
   const navigate = useNavigate()
   const [selectedTab, setSelectedTab] = useState("all")
