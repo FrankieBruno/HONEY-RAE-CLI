@@ -23,7 +23,7 @@ export const Employee = () => {
                 <div className="updateForm">
                     <input type="text" id="specialty" value={employee.specialty}
                         onChange={(e) => setEmployee({ ...employee, specialty: e.target.value })} />
-                    <button onClick={() => updateEmployee(employee.id, employee)}>Update</button>
+                    <button onClick={() => updateEmployee(employee.id, employee).then(() => navigate('/employees'))}>Update</button>
                 </div>
             </section>
 
