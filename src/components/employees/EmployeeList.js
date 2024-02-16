@@ -8,7 +8,9 @@ export const EmployeeList = () => {
   const [specialties, setSpecialties] = useState("")
   const [newEmployee, setNewEmployee] = useState({
     firstName: "",
-    lastName: ""
+    lastName: "",
+    username: "",
+    email: "",
   })
 
   const navigate = useNavigate()
@@ -50,6 +52,8 @@ export const EmployeeList = () => {
       </div>
       <input type="text" id="newEmployeeFirst" value={newEmployee.firstName} placeholder="First name" onChange={e => setNewEmployee({ ...newEmployee, firstName: e.target.value })} className="newEmployeeInput" />
       <input type="text" id="newEmployeeLast" value={newEmployee.lastName} placeholder="Last name" onChange={e => setNewEmployee({ ...newEmployee, lastName: e.target.value })} className="newEmployeeInput" />
+      <input type="text" id="newEmployeeUsername" value={newEmployee.username} placeholder="Username" onChange={e => setNewEmployee({ ...newEmployee, username: e.target.value })} className="newEmployeeInput" />
+      <input type="text" id="newEmployeeEmail" value={newEmployee.email} placeholder="Email" onChange={e => setNewEmployee({ ...newEmployee, email: e.target.value })} className="newEmployeeInput" />
       <button onClick={() => addEmployee(newEmployee).then((data) => navigate(`/employees/${data.id}`))} className="newEmployeeBtn">Add Employee</button>
     </div >
   )
