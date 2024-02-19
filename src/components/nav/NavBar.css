@@ -44,3 +44,10 @@
 .navContainer {
     margin-bottom: 8em;
 }
+
+@media screen and (max-width:400px)
+{
+    .navContainer {
+        font-size: 9px;
+    }
+}
