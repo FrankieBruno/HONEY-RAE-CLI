@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./Auth.css"
 import { registerUser } from "../../managers/AuthManager";
 
@@ -21,11 +21,17 @@ export const Register = () => {
         });
       })
       .then(createdUser => {
-        localStorage.setItem("honeyrae", JSON.stringify(createdUser))
+        // Add valid: true for consistency with login
+        const authInfo = { ...createdUser, valid: true }
+        localStorage.setItem("honeyrae", JSON.stringify(authInfo))
         navigate("/")
       })
       .catch(error => {
-        setFeedback(JSON.parse(error.message).message)
+        try {
+          setFeedback(JSON.parse(error.message).message)
+        } catch {
+          setFeedback("Registration failed. Please try again.")
+        }
       })
   }
 
@@ -43,7 +49,7 @@ export const Register = () => {
 
 
   return (
-    <main style={{ textAlign: "center" }}>
+    <main className="container--register">
       <dialog className="dialog dialog--password" ref={conflictDialog}>
         <div>{serverFeedback}</div>
         <button className="button--close"
@@ -54,43 +60,54 @@ export const Register = () => {
       </dialog>
 
       <form className="form--login" onSubmit={handleRegister}>
-        <h1 className="h3 mb-3 font-weight-normal">Register New Account</h1>
+        <h1>Create Your Account</h1>
         <fieldset>
-          <label htmlFor="first_name"> First Name </label>
+          <label htmlFor="first_name">First Name</label>
           <input onChange={updateCustomer}
             type="text" name="first_name"
-            className="form-control" required autoFocus />
+            className="form-control"
+            placeholder="Enter your first name"
+            required autoFocus />
         </fieldset>
         <fieldset>
-          <label htmlFor="last_name"> Last Name </label>
+          <label htmlFor="last_name">Last Name</label>
           <input onChange={updateCustomer}
             type="text" name="last_name"
-            className="form-control" required />
+            className="form-control"
+            placeholder="Enter your last name"
+            required />
         </fieldset>
         <fieldset>
-          <label htmlFor="address"> Address </label>
+          <label htmlFor="address">Address</label>
           <input onChange={updateCustomer}
             type="text"
             name="address"
-            className="form-control" required />
+            className="form-control"
+            placeholder="Enter your address"
+            required />
         </fieldset>
         <fieldset>
-          <label htmlFor="email"> Email address </label>
+          <label htmlFor="email">Email Address</label>
           <input onChange={updateCustomer}
             type="email"
             name="email"
-            className="form-control" required />
+            className="form-control"
+            placeholder="Enter your email"
+            required />
         </fieldset>
         <fieldset>
-          <label htmlFor="password"> Password </label>
+          <label htmlFor="password">Password</label>
           <input onChange={updateCustomer}
             type="password"
             name="password"
-            className="form-control" required />
+            className="form-control"
+            placeholder="Create a password"
+            required />
         </fieldset>
         <fieldset>
-          <button type="submit"> Register </button>
+          <button type="submit">Register</button>
         </fieldset>
+        <Link className="back-to-login" to="/login">Already have an account? Sign In</Link>
       </form>
     </main>
   )

@@ -1,28 +1,46 @@
-main {
-    padding: 5em 0 0 10em;
+/* Login Page Container */
+.container--login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2em 4em;
+    box-sizing: border-box;
 }
 
-h1 {
+.container--login .logo {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 120px;
+}
+
+.container--login h1 {
     font-weight: 400;
-    margin-bottom: 4em;
+    font-size: 1.8rem;
+    margin-bottom: 1.5em;
+    max-width: 400px;
 }
 
-h2 {
+.container--login h2 {
     font-weight: 600;
-
+    font-size: 1.2rem;
+    margin-bottom: 1em;
 }
 
 .illustration {
     position: absolute;
     right: 0;
-    top:0;
+    top: 0;
     bottom: 0;
     margin: auto;
     height: 85%;
+    pointer-events: none;
 }
 
 .form--login {
-    width: 25%;
+    width: 100%;
+    max-width: 400px;
 }
 
 .form-control {
@@ -35,24 +53,150 @@ h2 {
     margin-bottom: 1em;
     width: 100%;
     box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .form-actions {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1em;
 }
 
 .register-link {
     color: #F5CD51;
     text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.register-link:hover {
+    text-decoration: underline;
 }
 
 .btn {
-	font-family: "IBM Plex Mono";
+    font-family: "IBM Plex Mono";
     font-weight: 700;
     border: none;
     background: #F5CD51;
+    color: #00431B;
     padding: 1em 2em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
 
+.btn:hover {
+    background: #e6be42;
+}
+
+/* Registration Page */
+.container--register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2em;
+    box-sizing: border-box;
+}
+
+.container--register h1 {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.container--register .form--login {
+    width: 100%;
+    max-width: 450px;
+}
+
+.container--register fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.container--register label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.container--register button[type="submit"] {
+    font-family: "IBM Plex Mono";
+    font-weight: 700;
+    border: none;
+    background: #F5CD51;
+    color: #00431B;
+    padding: 1em 2em;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1em;
+    transition: background 0.2s ease;
+}
+
+.container--register button[type="submit"]:hover {
+    background: #e6be42;
+}
+
+.back-to-login {
+    display: block;
+    text-align: center;
+    margin-top: 1.5em;
+    color: #F5CD51;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-to-login:hover {
+    text-decoration: underline;
+}
+
+/* Dialog styles */
+.dialog--auth {
+    padding: 2em;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    text-align: center;
+}
+
+.dialog--auth .button--close {
+    margin-top: 1em;
+    padding: 0.5em 1.5em;
+    background: #00431B;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dialog--password {
+    padding: 2em;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    text-align: center;
+}
+
+.dialog--password .button--close {
+    margin-top: 1em;
+    padding: 0.5em 1.5em;
+    background: #00431B;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
